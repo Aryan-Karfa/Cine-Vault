@@ -2,12 +2,12 @@ import useStore from '../store/useStore';
 import styles from './MoodPicker.module.css';
 
 const moods = [
-  { id: 'laugh', emoji: '😂', label: 'Laugh' },
-  { id: 'thrill', emoji: '😱', label: 'Thrill' },
-  { id: 'cry', emoji: '😢', label: 'Cry' },
-  { id: 'think', emoji: '🧠', label: 'Think' },
-  { id: 'romance', emoji: '❤️', label: 'Romance' },
-  { id: 'action', emoji: '🔥', label: 'Action' }
+  { id: 'laugh', label: 'Laugh' },
+  { id: 'thrill', label: 'Thrill' },
+  { id: 'cry', label: 'Cry' },
+  { id: 'think', label: 'Think' },
+  { id: 'romance', label: 'Romance' },
+  { id: 'action', label: 'Action' }
 ];
 
 const MoodPicker = () => {
@@ -23,7 +23,6 @@ const MoodPicker = () => {
             className={`${styles.pill} ${activeMood === mood.id ? styles.active : ''}`}
             onClick={() => setActiveMood(mood.id)}
           >
-            <span className="emoji">{mood.emoji}</span>
             <span className={styles.label}>{mood.label}</span>
           </button>
         ))}
