@@ -2,6 +2,8 @@
 
 > A cinematic streaming frontend that fuses Netflix's dark, content-first browsing architecture with Letterboxd's film-criticism community layer. Built to feel like a real platform — not a template.
 
+![CineVault](./public/screenshot.png)
+
 ---
 
 ## Overview
