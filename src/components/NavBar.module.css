@@ -1,0 +1,108 @@
+.nav {
+  height: var(--nav-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--content-pad);
+  transition: background 200ms ease, box-shadow 200ms ease;
+}
+
+.scrolled {
+  background: var(--bg-base);
+  box-shadow: 0 1px 0 var(--border-subtle);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--brand-red);
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.clapper {
+  font-style: normal;
+  font-size: 24px;
+}
+
+.centerLinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+}
+
+.navLink {
+  font-size: 14px;
+  color: var(--text-secondary);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+}
+
+.activeLink {
+  color: var(--text-primary);
+}
+
+.activeLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--brand-red);
+}
+
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.iconBtn {
+  color: var(--text-primary);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.redDot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--brand-red);
+  border-radius: 50%;
+  border: 2px solid var(--bg-base);
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-mid);
+  object-fit: cover;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .centerLinks { display: none; }
+}

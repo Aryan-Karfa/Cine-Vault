@@ -1,0 +1,160 @@
+.hero {
+  min-height: 85vh;
+  position: relative;
+  background-size: cover;
+  background-position: center top;
+  transition: background-image 600ms ease;
+  display: flex;
+  align-items: flex-end;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+.heroOverlayTop {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--bg-base) 0%, transparent 30%);
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  max-width: 560px;
+  padding: 0 var(--content-pad) 15vh;
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.fadingOut {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.fadingIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 16px;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.heroTagline {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.heroBadges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.badgeChip {
+  background: var(--bg-elevated);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+}
+
+.btnRed {
+  height: 48px;
+  padding: 0 32px;
+  font-size: 16px;
+  gap: 12px;
+}
+
+.btnGhost {
+  height: 48px;
+  padding: 0 32px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.1);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  transition: background var(--transition-fast);
+}
+.btnGhost:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.mainContent {
+  position: relative;
+  z-index: 10;
+  background: var(--bg-base);
+}
+
+.rowsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-bottom: 96px;
+}
+
+.topPicksHeader {
+  padding: 0 var(--content-pad);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: -16px; 
+}
+
+.avatarsStack {
+  display: flex;
+}
+.avatarsStack img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-surface);
+  margin-left: -8px;
+}
+.avatarsStack img:first-child { margin-left: 0; }
+
+.consensusChip {
+  background: var(--bg-elevated);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent-amber);
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: 70vh; }
+  .heroTitle { font-size: 40px; }
+  .rowsContainer { gap: 32px; }
+}

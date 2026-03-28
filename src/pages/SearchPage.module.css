@@ -1,0 +1,168 @@
+.page {
+  padding-top: calc(var(--nav-height) + 48px);
+  min-height: 100vh;
+  background: var(--bg-base);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--content-pad) 96px;
+}
+
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--brand-red);
+}
+
+.searchInput {
+  width: 100%;
+  height: 56px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  font-family: var(--font-ui);
+  font-size: 18px;
+  color: var(--text-primary);
+  padding: 0 52px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+.searchInput:focus { border-color: var(--text-secondary); }
+.searchInput::placeholder { color: var(--text-tertiary); }
+
+.clearBtn {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-elevated);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+.clearBtn:hover { background: var(--bg-hover); color: #fff; }
+
+.typeahead {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-top: 8px;
+  padding: 8px 0;
+  box-shadow: var(--shadow-card);
+  z-index: 50;
+}
+
+.typeaheadItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+.typeaheadItem:hover { background: var(--bg-hover); }
+
+.typeaheadItem img {
+  width: 32px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.taTitle { font-family: var(--font-ui); font-size: 15px; font-weight: 500; flex: 1; }
+.taYear { font-family: var(--font-ui); font-size: 13px; color: var(--text-tertiary); }
+.taBadge { background: var(--bg-surface); border: 1px solid var(--border-subtle); font-size: 10px; padding: 2px 6px; border-radius: var(--radius-sm); text-transform: uppercase; color: var(--text-secondary); }
+
+.defaultState {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.sectionHeading {
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.listWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+.listItem:hover { color: var(--text-primary); }
+
+.tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 32px;
+}
+
+.tabBtn {
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+.tabBtn:hover { color: var(--text-primary); }
+.activeTab { color: var(--brand-red); border-bottom-color: var(--brand-red); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.noResults {
+  text-align: center;
+  padding: 64px 0;
+}
+.noResText {
+  font-family: var(--font-ui);
+  font-size: 18px;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}
